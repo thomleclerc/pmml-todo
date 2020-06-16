@@ -11,3 +11,5 @@ ng g c subfolder/ComponentName
 ng serve || yarn start
 
 **_ tests _**
+
+https://www.youtube.com/watch?v=nbFmHD4T04k
