@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
+  title = 'To Do : Test PMML';
+
   constructor() {}
 
   ngOnInit(): void {}
