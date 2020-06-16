@@ -3,7 +3,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'header',
+  selector: 'todo-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
