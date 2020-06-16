@@ -1,7 +1,15 @@
-<!-- <div class="todo-item" *ngFor="let todo of todos">
-  content here
-</div> -->
+<h1>{{ title }}</h1>
 
-<div class="todo-item">
-  <h1>{{ title }}</h1>
+<div class="todo-item" *ngFor="let todo of todos">
+  <div class="p-field-checkbox">
+    <p-checkbox
+      name="todos"
+      value="{{ todo.id }}"
+      inputId="todo-{{ todo.id }}"
+      [(ngModel)]="todos"
+      label="{{ todo.title }}"
+    ></p-checkbox>
+  </div>
 </div>
+
+<!-- Form here for adding item to list -->

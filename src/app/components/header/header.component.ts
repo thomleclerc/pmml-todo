@@ -8,6 +8,8 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  title: string = 'Header';
+
   constructor() {}
 
   ngOnInit(): void {}
