@@ -8,7 +8,8 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'Header';
+  name: string = 'Thomas Leclerc';
+  date: string = '2020-06-17';
 
   constructor() {}
 

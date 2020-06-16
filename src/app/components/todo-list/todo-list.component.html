@@ -1,15 +1,20 @@
-<h1>{{ title }}</h1>
-
-<div class="todo-item" *ngFor="let todo of todos">
-  <div class="p-field-checkbox">
-    <p-checkbox
-      name="todos"
-      value="{{ todo.id }}"
-      inputId="todo-{{ todo.id }}"
-      [(ngModel)]="todos"
-      label="{{ todo.title }}"
-    ></p-checkbox>
+<section class="todo-items">
+  <div class="todo-item" *ngFor="let todo of todos">
+    <!-- row -->
+    <div class="p-field-checkbox">
+      <p-checkbox
+        name="todos"
+        value="{{ todo.id }}"
+        inputId="todo-{{ todo.id }}"
+        label="{{ todo.title }}"
+        [ngModel]="todos"
+        (ngModelChange)="handleCheckboxClick($event)"
+      ></p-checkbox>
+    </div>
+    <!-- clear icon -->
   </div>
-</div>
+</section>
 
-<!-- Form here for adding item to list -->
+<!-- Form here add todo -->
+
+<!-- [(ngModel)]="todos" its causing the duplicate -->

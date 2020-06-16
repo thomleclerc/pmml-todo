@@ -5,13 +5,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  title: string = 'To Do : Test PMML';
   todos: object[] = [
     {
       id: 1,
-      title: '',
-      completed: false,
-      editing: false,
+      title: 'Clean room',
+      isCompleted: false,
+      isEditing: false,
+    },
+    {
+      id: 2,
+      title: 'Clean outside',
+      isCompleted: false,
+      isEditing: false,
     },
   ];
 
@@ -22,4 +27,8 @@ export class TodoListComponent implements OnInit {
   handleDeleteTodoClick() {}
 
   handleAddTodoClick() {}
+
+  handleCheckboxClick(value: object) {
+    console.log(value);
+  }
 }
