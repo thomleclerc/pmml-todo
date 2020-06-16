@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  title = 'To Do : Test PMML';
+  title: string = 'To Do : Test PMML';
   todos: object[] = [
     {
       id: 1,
@@ -19,7 +19,7 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleDeleteTodo() {}
+  handleDeleteTodoClick() {}
 
-  handleAddTodo() {}
+  handleAddTodoClick() {}
 }
