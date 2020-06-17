@@ -1,0 +1,21 @@
+.todo {
+    &.-items{
+        align-items: center;
+    }
+
+    &__divider {
+        position: relative;
+	    margin-top: 25px;
+        height: 1px;
+        border-bottom: thin;
+        border-color: black;
+        color: black;
+
+    }
+
+    &__icon {
+        &:hover {
+
+        }
+    }
+}

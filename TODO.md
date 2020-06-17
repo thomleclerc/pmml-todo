@@ -7,6 +7,7 @@ yarn add primeng font-awesome (https://www.primefaces.org/primeng/showcase/#/)(h
 
 ng g c component-name
 ng g c subfolder/ComponentName
+ng g interface interfaces/interface-name
 
 ng serve || yarn start
 

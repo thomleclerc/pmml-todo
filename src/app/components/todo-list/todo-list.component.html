@@ -1,20 +1,39 @@
-<section class="todo-items">
-  <div class="todo-item" *ngFor="let todo of todos">
-    <!-- row -->
-    <div class="p-field-checkbox">
-      <p-checkbox
-        name="todos"
-        value="{{ todo.id }}"
-        inputId="todo-{{ todo.id }}"
-        label="{{ todo.title }}"
-        [ngModel]="todos"
-        (ngModelChange)="handleCheckboxClick($event)"
-      ></p-checkbox>
-    </div>
-    <!-- clear icon -->
-  </div>
+<section class="todo -items">
+  <p-card header="Todo list" [style]="{width: '400px'}">
+    <input id="input" type="text" size="30" pInputText [(ngModel)]="todoTitle" placeholder="{{ todoPlaceholder }}" (keyup.enter)="handleAddTodo()">
+    
+      <div class="todo-item" *ngFor="let todo of todos">
+        <div class="p-field-checkbox">
+          <p-checkbox
+            name="todos"
+            value="{{ todo.id }}"
+            inputId="todo-{{ todo.id }}"
+            binary="true"
+            [(ngModel)]="todo.isCompleted"
+            (ngModelChange)="handleCompletedTodo(todo)"
+          ></p-checkbox>
+          <label *ngIf="!todo.isEditing" class="" (dblclick)="handleEditTodo(todo)" >
+            {{ todo.title }}
+          </label>
+          <input id="input" *ngIf="todo.isEditing" type="text" size="30" class="" pInputText [(ngModel)]="todo.title" (blur)="handleDoneEditingTodo(todo)" (keyup.enter)="handleDoneEditingTodo(todo)" (keyup.esc)="handleCancelEditTodo(todo)" autofocus>
+          
+          <div class="" (click)="handleDeleteTodo(todo.id)">
+            &times;
+          </div>
+        </div>
+      </div>
+
+      <div class="todo__divider"></div>
+  
+      <div class="p-field-checkbox">
+        <p-checkbox
+          name="checkAll"
+          inputId="checkAll"
+          binary="true"
+          label="Check all"
+          [(ngModel)]="checkAll"
+          (change)="handleCheckAllTodos()"
+        ></p-checkbox>
+      </div>
+  </p-card>
 </section>
-
-<!-- Form here add todo -->
-
-<!-- [(ngModel)]="todos" its causing the duplicate -->
