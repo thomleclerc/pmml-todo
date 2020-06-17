@@ -1,8 +1,8 @@
-<section class="todo -items">
+<section class="todo__items">
   <p-card header="Todo list" [style]="{width: '400px'}">
     <input id="input" type="text" size="30" class="todo__input" pInputText [(ngModel)]="todoTitle" placeholder="{{ todoPlaceholder }}" (keyup.enter)="handleAddTodo()">
     
-      <div class="todo-item" *ngFor="let todo of todos">
+      <div class="todo__item" *ngFor="let todo of todos">
         <div class="p-field-checkbox">
           <p-checkbox
             name="todos"
@@ -19,11 +19,11 @@
           <div class="todo__icon" (click)="handleDeleteTodo(todo.id)">
             &times;
           </div>
-
-          <div *ngIf="todos.length()" class="">
-            <h1>There's no more task to do :D</h1>
-          </div>
         </div>
+      </div>
+
+      <div *ngIf="todos.length === 0">
+        <h3>There's no more task to do :D</h3>
       </div>
 
       <div class="todo__divider"></div>

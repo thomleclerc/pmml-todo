@@ -39,10 +39,6 @@ export class TodoListComponent implements OnInit {
     ];
   }
 
-  getTodosCount() : number {
-    return this.todos.length;
-  }
-
   handleAddTodo() : void {
     if(this.todoTitle.trim().length === 0){
       return;
