@@ -1,6 +1,6 @@
 <section class="todo -items">
   <p-card header="Todo list" [style]="{width: '400px'}">
-    <input id="input" type="text" size="30" pInputText [(ngModel)]="todoTitle" placeholder="{{ todoPlaceholder }}" (keyup.enter)="handleAddTodo()">
+    <input id="input" type="text" size="30" class="todo__input" pInputText [(ngModel)]="todoTitle" placeholder="{{ todoPlaceholder }}" (keyup.enter)="handleAddTodo()">
     
       <div class="todo-item" *ngFor="let todo of todos">
         <div class="p-field-checkbox">
@@ -10,15 +10,18 @@
             inputId="todo-{{ todo.id }}"
             binary="true"
             [(ngModel)]="todo.isCompleted"
-            (ngModelChange)="handleCompletedTodo(todo)"
           ></p-checkbox>
           <label *ngIf="!todo.isEditing" class="" (dblclick)="handleEditTodo(todo)" >
             {{ todo.title }}
           </label>
           <input id="input" *ngIf="todo.isEditing" type="text" size="30" class="" pInputText [(ngModel)]="todo.title" (blur)="handleDoneEditingTodo(todo)" (keyup.enter)="handleDoneEditingTodo(todo)" (keyup.esc)="handleCancelEditTodo(todo)" autofocus>
           
-          <div class="" (click)="handleDeleteTodo(todo.id)">
+          <div class="todo__icon" (click)="handleDeleteTodo(todo.id)">
             &times;
+          </div>
+
+          <div *ngIf="todos.length()" class="">
+            <h1>There's no more task to do :D</h1>
           </div>
         </div>
       </div>
@@ -32,7 +35,7 @@
           binary="true"
           label="Check all"
           [(ngModel)]="checkAll"
-          (change)="handleCheckAllTodos()"
+          (onChange)="handleCheckAllTodos($event)"
         ></p-checkbox>
       </div>
   </p-card>

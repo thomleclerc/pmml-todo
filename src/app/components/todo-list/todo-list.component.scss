@@ -1,21 +1,36 @@
 .todo {
-    &.-items{
+    &__items{
         align-items: center;
+    }
+
+    &__item {
+
     }
 
     &__divider {
         position: relative;
-	    margin-top: 25px;
+        margin-top: 15px;
+        margin-bottom: 5px;
         height: 1px;
         border-bottom: thin;
-        border-color: black;
-        color: black;
+        background-color: black;
 
     }
 
     &__icon {
-        &:hover {
+        position: relative;
+        left: 30px;
+        text-align: right;
+        width: 20px;
+        text-align: center;
 
+        &:hover {
+            border-radius: 30px;
+            background-color: grey;
         }
+    }
+
+    &__input {
+        margin-bottom: 10px;
     }
 }

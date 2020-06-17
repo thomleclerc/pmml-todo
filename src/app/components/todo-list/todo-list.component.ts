@@ -39,6 +39,10 @@ export class TodoListComponent implements OnInit {
     ];
   }
 
+  getTodosCount() : number {
+    return this.todos.length;
+  }
+
   handleAddTodo() : void {
     if(this.todoTitle.trim().length === 0){
       return;
@@ -81,7 +85,7 @@ export class TodoListComponent implements OnInit {
     todo.isCompleted = !todo.isCompleted;
   }
 
-  handleCheckAllTodos() : void {
-    this.todos.forEach(todo => todo.isCompleted = (<HTMLInputElement>event.target).checked);
+  handleCheckAllTodos(event: any) : void {
+    this.todos.forEach(todo => todo.isCompleted = event.checked);
   }
 }
