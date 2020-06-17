@@ -35,9 +35,21 @@
 
     &__input {
         margin-bottom: 10px;
+
+        &.-edit {
+            margin-left: 15px;
+            margin-bottom: 0px;
+        } 
     }
 
     &__label {
+        width: auto;
         margin-left: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        &:hover {
+            cursor: text;
+        }
     }
 }
