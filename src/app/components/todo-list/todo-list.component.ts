@@ -27,7 +27,7 @@ export class TodoListComponent implements OnInit {
       {
         id: 1,
         title: 'Clean room',
-        isCompleted: true,
+        isCompleted: false,
         isEditing: false,
       },
       {

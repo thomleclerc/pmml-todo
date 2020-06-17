@@ -1,5 +1,5 @@
 <section class="todo__items">
-  <p-card header="Todo list" [style]="{width: '400px'}">
+  <p-card header="Todo list" [style]="{width: '500px', marginLeft: 'auto', marginRight: 'auto'}">
     <input id="input" type="text" size="30" class="todo__input" pInputText [(ngModel)]="todoTitle" placeholder="{{ todoPlaceholder }}" (keyup.enter)="handleAddTodo()">
     
       <div class="todo__item" *ngFor="let todo of todos">
@@ -11,7 +11,7 @@
             binary="true"
             [(ngModel)]="todo.isCompleted"
           ></p-checkbox>
-          <label *ngIf="!todo.isEditing" class="" (dblclick)="handleEditTodo(todo)" >
+          <label *ngIf="!todo.isEditing" class="todo__label" (dblclick)="handleEditTodo(todo)" >
             {{ todo.title }}
           </label>
           <input id="input" *ngIf="todo.isEditing" type="text" size="30" class="" pInputText [(ngModel)]="todo.title" (blur)="handleDoneEditingTodo(todo)" (keyup.enter)="handleDoneEditingTodo(todo)" (keyup.esc)="handleCancelEditTodo(todo)" autofocus>
@@ -23,7 +23,7 @@
       </div>
 
       <div *ngIf="todos.length === 0">
-        <h3>There's no more task to do :D</h3>
+        <h4>There's no more task left :D</h4>
       </div>
 
       <div class="todo__divider"></div>

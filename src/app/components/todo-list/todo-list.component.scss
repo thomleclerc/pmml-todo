@@ -1,6 +1,10 @@
 .todo {
     &__items{
-        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__item {
@@ -19,18 +23,21 @@
 
     &__icon {
         position: relative;
-        left: 30px;
-        text-align: right;
         width: 20px;
+        border-radius: 30px;
         text-align: center;
+        margin-left: auto;
 
         &:hover {
-            border-radius: 30px;
-            background-color: grey;
+            background-color: #d3d3d3;
         }
     }
 
     &__input {
         margin-bottom: 10px;
+    }
+
+    &__label {
+        margin-left: 10px;
     }
 }
